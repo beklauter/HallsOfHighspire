@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://byeoljfg4qqe1"]
+
+[node name="GameUI" type="Control" unique_id=367376646]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1781350751]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 19.0
+offset_right = 220.0
+offset_bottom = 108.0
+scale = Vector2(1, 0.8)
+
+[node name="LifeBar" type="ProgressBar" parent="VBoxContainer" unique_id=1792290116]
+modulate = Color(0, 0.98039216, 0.11764706, 1)
+layout_mode = 2
+value = 100.0
+
+[node name="ManaBar" type="ProgressBar" parent="VBoxContainer" unique_id=755983835]
+modulate = Color(0, 0.54901963, 0.78431374, 1)
+layout_mode = 2
+value = 66.0
+
+[node name="EnergyBar" type="ProgressBar" parent="VBoxContainer" unique_id=1744086064]
+modulate = Color(1, 0.7254902, 0.22745098, 1)
+layout_mode = 2
+value = 33.0
+
+[node name="XPBar" type="ProgressBar" parent="VBoxContainer" unique_id=1297073002]
+modulate = Color(0.5372549, 0.2901961, 0.92941177, 1)
+layout_mode = 2
+value = 50.0
