@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cpc31vl4cqryr"]
+
+[ext_resource type="Texture2D" uid="uid://bm0ahxetdqt7d" path="res://icon.svg" id="1_wa4ji"]
+[ext_resource type="PackedScene" uid="uid://doi0gccvsbihy" path="res://scenes/player/player.tscn" id="2_2sfrk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sfrk"]
+size = Vector2(16, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jau4q"]
+size = Vector2(20, 880)
+
+[node name="TestScene" type="Node2D" unique_id=460997983]
+
+[node name="Player" parent="." unique_id=1691991010 instance=ExtResource("2_2sfrk")]
+position = Vector2(696, 107)
+
+[node name="SimpleFloor" type="StaticBody2D" parent="." unique_id=1998488252]
+scale = Vector2(100, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SimpleFloor" unique_id=411528950]
+position = Vector2(8, 890)
+shape = SubResource("RectangleShape2D_2sfrk")
+
+[node name="Sprite2D" type="Sprite2D" parent="SimpleFloor" unique_id=1980661635]
+position = Vector2(7.9999967, 889.964)
+scale = Vector2(0.124999955, 0.15568677)
+texture = ExtResource("1_wa4ji")
+
+[node name="SimpleWall" type="StaticBody2D" parent="." unique_id=243677697]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SimpleWall" unique_id=2011828733]
+position = Vector2(10, 440)
+shape = SubResource("RectangleShape2D_jau4q")
+
+[node name="Sprite2D" type="Sprite2D" parent="SimpleWall" unique_id=1038256641]
+position = Vector2(10, 440)
+scale = Vector2(0.15625001, 6.875)
+texture = ExtResource("1_wa4ji")
