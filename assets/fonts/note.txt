@@ -1,0 +1,6 @@
+#MENU
+#Bogus -> Menu - Buttons
+#Njaruto -> Menu - TopText
+
+#GAME
+#Duality -> Textbox for NPC, Quests, etc.

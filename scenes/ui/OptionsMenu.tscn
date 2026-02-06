@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://de7tjvx4udvag"]
+
+[ext_resource type="Script" uid="uid://cu8m8342u5xh" path="res://scripts/ui/OptionsMenu.gd" id="1_85c7g"]
+[ext_resource type="Texture2D" uid="uid://cybmhh1u4ap1m" path="res://assets/ui/MainMenu.jpg" id="2_uxfc2"]
+[ext_resource type="FontFile" uid="uid://dh03u0fh4g82s" path="res://assets/fonts/njnaruto.ttf" id="3_wwyh1"]
+[ext_resource type="FontFile" uid="uid://c1t4tt50tg51r" path="res://assets/fonts/duality.otf" id="4_sfpvx"]
+[ext_resource type="FontFile" uid="uid://8rje2m3rrqx1" path="res://assets/fonts/bogus.ttf" id="5_5l3pv"]
+
+[node name="OptionsMenu" type="Control" unique_id=1136459138]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_85c7g")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1308128937]
+modulate = Color(0.735357, 0.735357, 0.735357, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -2.0
+offset_right = 33.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uxfc2")
+expand_mode = 2
+
+[node name="Text_GameName" type="Label" parent="." unique_id=730031765]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -229.0
+offset_right = 229.0
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_wwyh1")
+theme_override_font_sizes/font_size = 54
+text = "Halls    of    Highspire"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text_MenuWindow" type="Label" parent="." unique_id=1163570028]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -229.0
+offset_top = 118.0
+offset_right = 229.0
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0.39215687, 1)
+theme_override_fonts/font = ExtResource("3_wwyh1")
+theme_override_font_sizes/font_size = 40
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text_Creators" type="Label" parent="." unique_id=821637484]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+offset_right = 125.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_sfpvx")
+theme_override_font_sizes/font_size = 14
+text = "Creators: Colin & Micha"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text_GameVersion" type="Label" parent="." unique_id=430802778]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_sfpvx")
+theme_override_font_sizes/font_size = 14
+text = "Version 0.0.1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=881468781]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 426.0
+offset_top = 196.0
+offset_right = 770.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Button_Back" type="Button" parent="VBoxContainer" unique_id=1054771068]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5l3pv")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Button_Back" to="." method="_on_button_back_pressed"]
