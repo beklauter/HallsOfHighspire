@@ -21,8 +21,13 @@ func _on_button_exit_pressed() -> void:
 
 func _startGame(anim_name: String) -> void:
 	if anim_name == "fade_start_2s":
-		get_tree().change_scene_to_file("res://scenes/levels/debug/TestScene.tscn")
+		get_tree().change_scene_to_file("res://scenes/levels/shops/shop_map_1.tscn")
 
 func _on_button_credits_pressed() -> void:
 	print("Credits Button pressed")
 	get_tree().change_scene_to_file("res://scenes/ui/CreditsMenu.tscn")
+
+
+func _on_button_controls_pressed() -> void:
+	print("Controls Button pressed")
+	get_tree().change_scene_to_file("res://scenes/ui/ControlsMenu.tscn")

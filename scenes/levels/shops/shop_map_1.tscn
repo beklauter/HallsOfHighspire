@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://bog1vjmfy4vd3" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="1_jnlcy"]
 [ext_resource type="Texture2D" uid="uid://cegy41vn4xlw5" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Floor Tiles2.png" id="2_0fvp4"]
-[ext_resource type="PackedScene" uid="uid://doi0gccvsbihy" path="res://scenes/player/player.tscn" id="2_rs6iw"]
+[ext_resource type="PackedScene" uid="uid://t7k7ooxktl6w" path="res://scenes/player/player.tscn" id="2_rs6iw"]
 [ext_resource type="Texture2D" uid="uid://by6gb5dvanwpb" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Decor.png" id="3_2bj1o"]
 [ext_resource type="Texture2D" uid="uid://dallcqtjb2qmx" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Birch1.png" id="3_k3oee"]
 [ext_resource type="Texture2D" uid="uid://cnm34syw6qhq6" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Birch2.png" id="4_ml3ro"]
-[ext_resource type="PackedScene" uid="uid://ciglf1sgpsaxq" path="res://scenes/props/cooking_pot.tscn" id="5_foul2"]
+[ext_resource type="PackedScene" path="res://scenes/props/cooking_pot.tscn" id="5_foul2"]
 [ext_resource type="Texture2D" uid="uid://yfea6fl8mpx4" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Birch3.png" id="5_hif38"]
 [ext_resource type="Texture2D" uid="uid://dduydp5w8q7bx" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/cloud1.png" id="6_fh0a8"]
 [ext_resource type="Texture2D" uid="uid://c17r0bq4q6hof" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/cloud2.png" id="7_woxl6"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://d1n7ytsqfm4mi" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="31_r4paw"]
 [ext_resource type="Texture2D" uid="uid://bgp5ghl3b6md5" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="32_li7ls"]
 [ext_resource type="Texture2D" uid="uid://d3odviwmpi8bn" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="33_j2hji"]
+[ext_resource type="PackedScene" uid="uid://byeoljfg4qqe1" path="res://scenes/ui/GameUI.tscn" id="34_d311t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rs6iw"]
 texture = ExtResource("1_jnlcy")
@@ -3919,6 +3920,12 @@ sources/23 = SubResource("TileSetAtlasSource_tvoo6")
 sources/24 = SubResource("TileSetAtlasSource_osqji")
 
 [node name="ShopMap1" type="Node2D" unique_id=2081267422]
+
+[node name="GameUI" parent="." unique_id=367376646 instance=ExtResource("34_d311t")]
+offset_left = 257.0
+offset_top = 349.0
+offset_right = 257.0
+offset_bottom = 349.0
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1171402658]
 tile_set = SubResource("TileSet_p7eid")

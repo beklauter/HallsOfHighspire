@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://begv135hfxsgn"]
+[gd_scene format=3 uid="uid://blkr632d4ttsy"]
 
-[ext_resource type="Script" uid="uid://kf1o3ilxh8g5" path="res://scripts/ui/CreditsMenu.gd" id="1_krh5m"]
-[ext_resource type="Texture2D" uid="uid://cybmhh1u4ap1m" path="res://assets/ui/MainMenu.jpg" id="2_kk5rt"]
-[ext_resource type="FontFile" uid="uid://dh03u0fh4g82s" path="res://assets/fonts/njnaruto.ttf" id="3_vdfjj"]
-[ext_resource type="FontFile" uid="uid://c1t4tt50tg51r" path="res://assets/fonts/duality.otf" id="4_h1m3d"]
-[ext_resource type="FontFile" uid="uid://8rje2m3rrqx1" path="res://assets/fonts/bogus.ttf" id="5_xa3hu"]
-[ext_resource type="StyleBox" uid="uid://dcvx77mrrggwk" path="res://prefabs/buttons/normal.tres" id="6_b1hb3"]
-[ext_resource type="StyleBox" uid="uid://xsfpdk3ywmck" path="res://prefabs/buttons/pressed.tres" id="7_68y5l"]
-[ext_resource type="StyleBox" uid="uid://ca8g68f8xyw62" path="res://prefabs/buttons/hover.tres" id="8_rigt4"]
-[ext_resource type="StyleBox" uid="uid://mqedh1fdytmh" path="res://prefabs/buttons/disabled.tres" id="9_71522"]
-[ext_resource type="StyleBox" uid="uid://dhbfox1imdode" path="res://prefabs/buttons/focus.tres" id="10_58lwe"]
+[ext_resource type="Script" uid="uid://q8wo0371iu4h" path="res://scripts/ui/ControlsMenu.gd" id="1_0oxcq"]
+[ext_resource type="Texture2D" uid="uid://cybmhh1u4ap1m" path="res://assets/ui/MainMenu.jpg" id="2_5f5b6"]
+[ext_resource type="FontFile" uid="uid://dh03u0fh4g82s" path="res://assets/fonts/njnaruto.ttf" id="3_274wj"]
+[ext_resource type="FontFile" uid="uid://c1t4tt50tg51r" path="res://assets/fonts/duality.otf" id="4_hk1we"]
+[ext_resource type="FontFile" uid="uid://8rje2m3rrqx1" path="res://assets/fonts/bogus.ttf" id="5_2bijb"]
+[ext_resource type="StyleBox" uid="uid://dcvx77mrrggwk" path="res://prefabs/buttons/normal.tres" id="6_k3kw3"]
+[ext_resource type="StyleBox" uid="uid://xsfpdk3ywmck" path="res://prefabs/buttons/pressed.tres" id="7_ubcq1"]
+[ext_resource type="StyleBox" uid="uid://ca8g68f8xyw62" path="res://prefabs/buttons/hover.tres" id="8_rox2t"]
+[ext_resource type="StyleBox" uid="uid://mqedh1fdytmh" path="res://prefabs/buttons/disabled.tres" id="9_xyew3"]
+[ext_resource type="StyleBox" uid="uid://dhbfox1imdode" path="res://prefabs/buttons/focus.tres" id="10_tnrnx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krh5m"]
 bg_color = Color(0, 0, 0, 0.25490198)
@@ -18,34 +18,10 @@ bg_color = Color(0, 0, 0, 0.25490198)
 
 [sub_resource type="Animation" id="Animation_krh5m"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Credits:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_kk5rt"]
 resource_name = "start_credits"
 length = 15.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Credits:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -1800.0]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vdfjj"]
 _data = {
@@ -53,14 +29,14 @@ _data = {
 &"start_credits": SubResource("Animation_kk5rt")
 }
 
-[node name="CreditsMenu" type="Control" unique_id=1136459138]
+[node name="ControlsMenu" type="Control" unique_id=1136459138]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_krh5m")
+script = ExtResource("1_0oxcq")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1308128937]
 modulate = Color(0.735357, 0.735357, 0.735357, 1)
@@ -74,7 +50,7 @@ offset_right = 33.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_kk5rt")
+texture = ExtResource("2_5f5b6")
 expand_mode = 2
 
 [node name="Text_GameName" type="Label" parent="." unique_id=730031765]
@@ -86,7 +62,7 @@ offset_left = -229.0
 offset_right = 229.0
 offset_bottom = 173.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_vdfjj")
+theme_override_fonts/font = ExtResource("3_274wj")
 theme_override_font_sizes/font_size = 54
 text = "Halls    of    Highspire"
 horizontal_alignment = 1
@@ -103,9 +79,9 @@ offset_right = 229.0
 offset_bottom = 173.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 0.39215687, 1)
-theme_override_fonts/font = ExtResource("3_vdfjj")
+theme_override_fonts/font = ExtResource("3_274wj")
 theme_override_font_sizes/font_size = 40
-text = "Credits"
+text = "Controls"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -133,54 +109,42 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_kk5rt")
 
-[node name="Credits" type="Control" parent="Panel" unique_id=1055208715]
-anchors_preset = 0
-offset_left = -279.5
-offset_right = -239.5
-offset_bottom = 40.0
-
-[node name="Text_Credits" type="Label" parent="Panel/Credits" unique_id=532998771]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=521463998]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 551.0
-offset_top = 510.0
-offset_right = 1009.0
-offset_bottom = 1755.0
+anchor_bottom = 1.0
+offset_left = -196.5
+offset_right = 196.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.9075186, 0.98206586, 0.9780205, 1)
-theme_override_fonts/font = ExtResource("4_h1m3d")
-theme_override_font_sizes/font_size = 40
-text = "Creators:
-Colin, Micha
 
+[node name="Label" type="Label" parent="Panel/HBoxContainer" unique_id=127719850]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.69803923, 1, 1, 1)
+theme_override_font_sizes/font_size = 51
+text = "Left
+Right
+Jump
+Attack
+Dash
+Drop"
 
+[node name="Control" type="Control" parent="Panel/HBoxContainer" unique_id=525579822]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 
-Game Engine:
-Godot
-
-
-
-Scripting & Coding
-Colin
-
-
-
-Level Design:
-Colin, Micha
-
-
-
-Menu Design
-Micha
-
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Label2" type="Label" parent="Panel/HBoxContainer" unique_id=1838670354]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.7607843, 1)
+theme_override_font_sizes/font_size = 51
+text = "A
+D
+SPACE
+Left Mouse Button
+E
+S"
 
 [node name="Text_Creators" type="Label" parent="." unique_id=821637484]
 layout_mode = 1
@@ -190,7 +154,7 @@ anchor_bottom = 1.0
 offset_top = -18.0
 offset_right = 125.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_h1m3d")
+theme_override_fonts/font = ExtResource("4_hk1we")
 theme_override_font_sizes/font_size = 14
 text = "Creators: Colin & Micha"
 horizontal_alignment = 1
@@ -207,7 +171,7 @@ offset_left = -68.0
 offset_top = -18.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_h1m3d")
+theme_override_fonts/font = ExtResource("4_hk1we")
 theme_override_font_sizes/font_size = 14
 text = "Version 0.0.1"
 horizontal_alignment = 1
@@ -231,13 +195,13 @@ alignment = 2
 
 [node name="Button_Back" type="Button" parent="VBoxContainer" unique_id=1054771068]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_xa3hu")
+theme_override_fonts/font = ExtResource("5_2bijb")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = ExtResource("6_b1hb3")
-theme_override_styles/pressed = ExtResource("7_68y5l")
-theme_override_styles/hover = ExtResource("8_rigt4")
-theme_override_styles/disabled = ExtResource("9_71522")
-theme_override_styles/focus = ExtResource("10_58lwe")
+theme_override_styles/normal = ExtResource("6_k3kw3")
+theme_override_styles/pressed = ExtResource("7_ubcq1")
+theme_override_styles/hover = ExtResource("8_rox2t")
+theme_override_styles/disabled = ExtResource("9_xyew3")
+theme_override_styles/focus = ExtResource("10_tnrnx")
 text = "Back"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1745506428]
