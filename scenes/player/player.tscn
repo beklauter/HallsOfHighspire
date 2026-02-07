@@ -176,7 +176,7 @@ shape = SubResource("CapsuleShape2D_dovo2")
 position = Vector2(5, -21)
 sprite_frames = SubResource("SpriteFrames_gx1jg")
 animation = &"wallslide"
-frame_progress = 0.3860198
+frame_progress = 0.032547668
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1629730569]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d3t8nqvlfmj3"]
+
+[ext_resource type="Texture2D" uid="uid://do34opv25asue" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Animated Sprites/GandalfHardcore Water Tiles sheet.png" id="1_ywfia"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv5ue"]
+atlas = ExtResource("1_ywfia")
+region = Rect2(0, 0, 160, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhmb8"]
+atlas = ExtResource("1_ywfia")
+region = Rect2(0, 64, 160, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rschd"]
+atlas = ExtResource("1_ywfia")
+region = Rect2(0, 128, 160, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dy83b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv5ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhmb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rschd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruyc1"]
+size = Vector2(160, 61)
+
+[node name="Water" type="StaticBody2D" unique_id=285820953]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1107689636]
+sprite_frames = SubResource("SpriteFrames_dy83b")
+frame_progress = 0.20017973
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=32489699]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_ruyc1")
