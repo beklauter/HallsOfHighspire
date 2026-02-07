@@ -143,7 +143,7 @@ text = "A
 D
 SPACE
 Left Mouse Button
-E
+L-SHIFT
 S"
 
 [node name="Text_Creators" type="Label" parent="." unique_id=821637484]
