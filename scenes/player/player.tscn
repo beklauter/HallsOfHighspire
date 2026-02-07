@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://doi0gccvsbihy"]
+[gd_scene format=3 uid="uid://t7k7ooxktl6w"]
 
-[ext_resource type="Script" uid="uid://cdioejdump6ke" path="res://scripts/player/player.gd" id="1_dovo2"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://frqpr7pd74ja" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_1.png" id="2_007i1"]
 [ext_resource type="Texture2D" uid="uid://chx3qpio408py" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_2.png" id="3_6cv16"]
 [ext_resource type="Texture2D" uid="uid://brs3db0bmu6fp" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_3.png" id="4_j4nxn"]
