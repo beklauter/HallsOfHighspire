@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://by6gb5dvanwpb" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Decor.png" id="3_2bj1o"]
 [ext_resource type="Texture2D" uid="uid://dallcqtjb2qmx" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Birch1.png" id="3_k3oee"]
 [ext_resource type="Texture2D" uid="uid://cnm34syw6qhq6" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Birch2.png" id="4_ml3ro"]
-[ext_resource type="PackedScene" uid="uid://ciglf1sgpsaxq" path="res://scenes/props/cooking_pot.tscn" id="5_foul2"]
+[ext_resource type="PackedScene" path="res://scenes/props/cooking_pot.tscn" id="5_foul2"]
 [ext_resource type="Texture2D" uid="uid://yfea6fl8mpx4" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Birch3.png" id="5_hif38"]
 [ext_resource type="Texture2D" uid="uid://dduydp5w8q7bx" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/cloud1.png" id="6_fh0a8"]
 [ext_resource type="Texture2D" uid="uid://c17r0bq4q6hof" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/cloud2.png" id="7_woxl6"]
@@ -3919,6 +3919,12 @@ sources/23 = SubResource("TileSetAtlasSource_tvoo6")
 sources/24 = SubResource("TileSetAtlasSource_osqji")
 
 [node name="ShopMap1" type="Node2D" unique_id=2081267422]
+
+[node name="GameUI" parent="." unique_id=367376646 instance=ExtResource("34_d311t")]
+offset_left = 257.0
+offset_top = 349.0
+offset_right = 257.0
+offset_bottom = 349.0
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1171402658]
 tile_set = SubResource("TileSet_p7eid")
