@@ -5,6 +5,85 @@
 [ext_resource type="FontFile" uid="uid://dh03u0fh4g82s" path="res://assets/fonts/njnaruto.ttf" id="3_iwbf0"]
 [ext_resource type="FontFile" uid="uid://c1t4tt50tg51r" path="res://assets/fonts/duality.otf" id="4_2ysvc"]
 [ext_resource type="FontFile" uid="uid://8rje2m3rrqx1" path="res://assets/fonts/bogus.ttf" id="5_xpiny"]
+[ext_resource type="StyleBox" uid="uid://dcvx77mrrggwk" path="res://prefabs/buttons/normal.tres" id="6_7vr37"]
+[ext_resource type="StyleBox" uid="uid://xsfpdk3ywmck" path="res://prefabs/buttons/pressed.tres" id="7_kncl5"]
+[ext_resource type="StyleBox" uid="uid://ca8g68f8xyw62" path="res://prefabs/buttons/hover.tres" id="8_clp4r"]
+[ext_resource type="StyleBox" uid="uid://mqedh1fdytmh" path="res://prefabs/buttons/disabled.tres" id="9_ee60a"]
+[ext_resource type="StyleBox" uid="uid://dhbfox1imdode" path="res://prefabs/buttons/focus.tres" id="10_qjd48"]
+
+[sub_resource type="Animation" id="Animation_bhu4a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kncl5"]
+resource_name = "fade_start_0.5s"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_clp4r"]
+resource_name = "fade_start_1s"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xpiny"]
+resource_name = "fade_start"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7vr37"]
+resource_name = "start_credits"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bhu4a"]
+_data = {
+&"RESET": SubResource("Animation_bhu4a"),
+&"fade_start_0.5s": SubResource("Animation_kncl5"),
+&"fade_start_1s": SubResource("Animation_clp4r"),
+&"fade_start_2s": SubResource("Animation_xpiny"),
+&"start_credits": SubResource("Animation_7vr37")
+}
 
 [node name="MainMenu" type="Control" unique_id=1136459138]
 layout_mode = 3
@@ -76,6 +155,21 @@ text = "Version 0.0.1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Button_Credits" type="Button" parent="." unique_id=808272390]
+layout_mode = 0
+offset_left = 1226.0
+offset_top = 19.0
+offset_right = 1570.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("5_xpiny")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("6_7vr37")
+theme_override_styles/pressed = ExtResource("7_kncl5")
+theme_override_styles/hover = ExtResource("8_clp4r")
+theme_override_styles/disabled = ExtResource("9_ee60a")
+theme_override_styles/focus = ExtResource("10_qjd48")
+text = "Credits"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=881468781]
 layout_mode = 1
 anchors_preset = 3
@@ -84,7 +178,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -374.0
-offset_top = -254.0
+offset_top = -231.0
 offset_right = -30.0
 offset_bottom = -30.0
 grow_horizontal = 0
@@ -96,20 +190,40 @@ alignment = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_xpiny")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("6_7vr37")
+theme_override_styles/pressed = ExtResource("7_kncl5")
+theme_override_styles/hover = ExtResource("8_clp4r")
+theme_override_styles/disabled = ExtResource("9_ee60a")
+theme_override_styles/focus = ExtResource("10_qjd48")
 text = "Start"
 
 [node name="Button_Options" type="Button" parent="VBoxContainer" unique_id=2012398742]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_xpiny")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("6_7vr37")
+theme_override_styles/pressed = ExtResource("7_kncl5")
+theme_override_styles/hover = ExtResource("8_clp4r")
+theme_override_styles/disabled = ExtResource("9_ee60a")
+theme_override_styles/focus = ExtResource("10_qjd48")
 text = "Options"
 
 [node name="Button_Exit" type="Button" parent="VBoxContainer" unique_id=1054771068]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_xpiny")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("6_7vr37")
+theme_override_styles/pressed = ExtResource("7_kncl5")
+theme_override_styles/hover = ExtResource("8_clp4r")
+theme_override_styles/disabled = ExtResource("9_ee60a")
+theme_override_styles/focus = ExtResource("10_qjd48")
 text = "Exit"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1418035912]
+libraries/ = SubResource("AnimationLibrary_bhu4a")
+movie_quit_on_finish = true
+
+[connection signal="pressed" from="Button_Credits" to="." method="_on_button_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_Options" to="." method="_on_button_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_Exit" to="." method="_on_button_exit_pressed"]
