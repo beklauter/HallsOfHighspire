@@ -1,37 +1,272 @@
 [gd_scene format=3 uid="uid://byeoljfg4qqe1"]
 
-[node name="GameUI" type="Control" unique_id=367376646]
+[ext_resource type="Texture2D" uid="uid://frqpr7pd74ja" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_1.png" id="1_ewmw1"]
+[ext_resource type="Script" uid="uid://ci0f8aoa0vd3d" path="res://scripts/ui/GameUI.gd" id="1_q50m1"]
+[ext_resource type="Texture2D" uid="uid://chx3qpio408py" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_2.png" id="2_q50m1"]
+[ext_resource type="Texture2D" uid="uid://brs3db0bmu6fp" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_3.png" id="3_5telh"]
+[ext_resource type="Texture2D" uid="uid://ceksgquhou3rc" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_4.png" id="4_gfqcv"]
+[ext_resource type="Texture2D" uid="uid://dtvp6e58nnrcf" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_5.png" id="5_5ic7t"]
+[ext_resource type="Texture2D" uid="uid://cq51oimlnj6bt" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_6.png" id="6_rcaep"]
+[ext_resource type="Texture2D" uid="uid://djtcftimakw2n" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash/Warrior_Dash_7.png" id="7_stmp2"]
+[ext_resource type="Texture2D" uid="uid://djw3vofpoegp1" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="8_a740g"]
+[ext_resource type="Texture2D" uid="uid://c0o04b4t24exb" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="9_gw3ij"]
+[ext_resource type="Texture2D" uid="uid://t5xhbihhetqs" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="10_avne5"]
+[ext_resource type="Texture2D" uid="uid://cfxm6xn51hfx4" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_4.png" id="11_nuaor"]
+[ext_resource type="Texture2D" uid="uid://d2jxd3dw0x831" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_5.png" id="12_j8uib"]
+[ext_resource type="Texture2D" uid="uid://gjx8ndua3cru" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_6.png" id="13_n0xrc"]
+[ext_resource type="Texture2D" uid="uid://csdq8i8xap0mq" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Jump/Warrior_Jump_1.png" id="14_oar5b"]
+[ext_resource type="Texture2D" uid="uid://b6koseu23qqkg" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Jump/Warrior_Jump_2.png" id="15_m4kxg"]
+[ext_resource type="Texture2D" uid="uid://ce637hrrgjweb" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Jump/Warrior_Jump_3.png" id="16_6ky0l"]
+[ext_resource type="Texture2D" uid="uid://blo0oxpcvsavj" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_1.png" id="17_rxxr3"]
+[ext_resource type="Texture2D" uid="uid://dgrdypyac3tg6" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_2.png" id="18_4k4dr"]
+[ext_resource type="Texture2D" uid="uid://dxiuhhrjgmxn4" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_3.png" id="19_lhtk2"]
+[ext_resource type="Texture2D" uid="uid://0agf7pia6bi0" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_4.png" id="20_ui72p"]
+[ext_resource type="Texture2D" uid="uid://bo6kiepny3f2w" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_5.png" id="21_k01vs"]
+[ext_resource type="Texture2D" uid="uid://c5mtb02ju14n" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_6.png" id="22_tviyi"]
+[ext_resource type="Texture2D" uid="uid://bdb1ptp13ppw2" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_7.png" id="23_igx5m"]
+[ext_resource type="Texture2D" uid="uid://dn402c8t6kcme" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_8.png" id="24_04v4u"]
+[ext_resource type="Texture2D" uid="uid://jaoi0iikxnak" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/WallSlide/Warrior_WallSlide_1.png" id="25_jtg8g"]
+[ext_resource type="Texture2D" uid="uid://d0cap6gpfmv7e" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/WallSlide/Warrior_WallSlide_2.png" id="26_dsdpy"]
+[ext_resource type="Texture2D" uid="uid://clhixyj7j56nw" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/WallSlide/Warrior_WallSlide_3.png" id="27_ba1gq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkdat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ewmw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q50m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5telh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gfqcv")
+}],
+"loop": false,
+"name": &"air_dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5ic7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rcaep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_stmp2")
+}],
+"loop": false,
+"name": &"dash_stop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ewmw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q50m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5ic7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rcaep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_stmp2")
+}],
+"loop": false,
+"name": &"ground_dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_a740g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gw3ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_avne5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nuaor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j8uib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_n0xrc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_oar5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m4kxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6ky0l")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_rxxr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4k4dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lhtk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ui72p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_k01vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tviyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_igx5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_04v4u")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_jtg8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dsdpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ba1gq")
+}],
+"loop": true,
+"name": &"wallslide",
+"speed": 5.0
+}]
+
+[node name="GameUI" type="CanvasLayer" unique_id=1995534564]
+script = ExtResource("1_q50m1")
+
+[node name="Control" type="Control" parent="." unique_id=367376646]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1781350751]
+[node name="Panel" type="Panel" parent="Control" unique_id=107189952]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 19.0
-offset_right = 220.0
-offset_bottom = 108.0
-scale = Vector2(1, 0.8)
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 245.0
+offset_bottom = 102.0
 
-[node name="LifeBar" type="ProgressBar" parent="VBoxContainer" unique_id=1792290116]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel" unique_id=1781350751]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 5.0
+offset_right = 323.43747
+offset_bottom = 63.749992
+scale = Vector2(0.64, 0.8)
+
+[node name="LifeBar" type="ProgressBar" parent="Control/Panel/VBoxContainer" unique_id=1792290116]
 modulate = Color(0, 0.98039216, 0.11764706, 1)
 layout_mode = 2
+tooltip_text = "HP"
 value = 100.0
 
-[node name="ManaBar" type="ProgressBar" parent="VBoxContainer" unique_id=755983835]
+[node name="ManaBar" type="ProgressBar" parent="Control/Panel/VBoxContainer" unique_id=755983835]
 modulate = Color(0, 0.54901963, 0.78431374, 1)
 layout_mode = 2
+tooltip_text = "MANA"
 value = 66.0
 
-[node name="EnergyBar" type="ProgressBar" parent="VBoxContainer" unique_id=1744086064]
+[node name="EnergyBar" type="ProgressBar" parent="Control/Panel" unique_id=1744086064]
 modulate = Color(1, 0.7254902, 0.22745098, 1)
-layout_mode = 2
+layout_mode = 0
+offset_left = 146.0
+offset_top = 54.0
+offset_right = 224.0
+offset_bottom = 81.0
+scale = Vector2(1, 0.8)
+tooltip_text = "ENERGY"
 value = 33.0
 
-[node name="XPBar" type="ProgressBar" parent="VBoxContainer" unique_id=1297073002]
-modulate = Color(0.5372549, 0.2901961, 0.92941177, 1)
-layout_mode = 2
-value = 50.0
+[node name="XPBar" type="ProgressBar" parent="Control/Panel" unique_id=1297073002]
+modulate = Color(0.78257495, 0.28344074, 1.3371685, 1)
+z_index = -108
+layout_mode = 0
+offset_top = 86.0
+offset_right = 229.0
+offset_bottom = 136.0
+scale = Vector2(1, 0.15)
+tooltip_text = "XP"
+value = 58.81
+show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Panel" unique_id=632479592]
+position = Vector2(35, 32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_jkdat")
+animation = &"idle"
+frame_progress = 0.84641
+
+[node name="MiniMap" type="Node2D" parent="Control" unique_id=191144494]
+position = Vector2(1362, 10)
+
+[node name="Map" type="Panel" parent="Control/MiniMap" unique_id=620153743]
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="NSWE" type="Label" parent="Control/MiniMap" unique_id=1858022170]
+visible = false
+offset_left = -15.0
+offset_top = -12.0
+offset_right = 217.0
+offset_bottom = 213.0
+text = "N
+
+
+W                                 E
+
+
+S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buffs" type="Node2D" parent="Control" unique_id=1213925612]
+position = Vector2(1150, 10)
+
+[node name="Map" type="Panel" parent="Control/Buffs" unique_id=1434635894]
+offset_right = 200.0
+offset_bottom = 34.0
+
+[node name="Label" type="Label" parent="Control/Buffs" unique_id=788288090]
+offset_left = 27.0
+offset_top = 4.0
+offset_right = 169.0
+offset_bottom = 27.0
+text = "No buffs activated"
+metadata/_edit_use_anchors_ = true
