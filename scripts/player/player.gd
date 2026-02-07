@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 320.0
+const SPEED = 280.0
 const ACCELERATION = 2200.0
 const AIR_ACCELERATION = 1400.0
 const FRICTION = 2000.0
@@ -18,7 +18,7 @@ const WALL_STICK_SPEED = 40.0
 const WALLSLIDE_VISUAL_SNAP = 8.0
 const WALL_STICK_TIME = 0.10
 
-const DASH_SPEED = 700.0
+const DASH_SPEED = 500.0
 const DASH_TIME = 0.15
 const DASH_COOLDOWN = 0.3
 
@@ -48,9 +48,18 @@ const CAM_VEL_FILTER = 10.0
 const CAM_FASTFALL_LOOKDOWN = 90.0
 const CAM_DEADZONE_Y = 70.0
 const CAM_Y_RECENTER_SPEED = 2.2
-const CAM_VERTICAL_BIAS = -90.0
+const CAM_VERTICAL_BIAS = -130.0
 
 const WALL_JUMP_REARM_MIN_TIME = 0.06
+
+const INVINCIBLE_TIME = 0.5
+const DAMAGE_KNOCKBACK_X = 260.0
+const DAMAGE_KNOCKBACK_Y = -120.0
+
+var max_hp: int = 5
+var hp: int = 5
+var invincible: bool = false
+var invincible_timer: float = 0.0
 
 var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0
@@ -84,11 +93,14 @@ var cam_vel_f: Vector2 = Vector2.ZERO
 var cam_look: Vector2 = Vector2.ZERO
 var cam_target_y: float = 0.0
 
-enum PlayerState { IDLE, RUN, JUMP, WALLSLIDE, DASH, DASHSTOP }
+var attack_hit_once: Dictionary = {}
+
+enum PlayerState { IDLE, RUN, JUMP, WALLSLIDE, DASH, DASHSTOP, ATTACK }
 var state: PlayerState = PlayerState.IDLE
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_2d: Camera2D = get_node_or_null("Camera2D")
+@onready var attack_hitbox: Area2D = $AttackHitbox
 
 var sprite_base_pos: Vector2 = Vector2.ZERO
 
@@ -96,6 +108,9 @@ func _ready() -> void:
 	sprite_base_pos = animated_sprite_2d.position
 	play_anim(&"idle")
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
+	_force_no_loop(&"attack")
+	attack_hitbox.monitoring = false
+	hp = max_hp
 
 	if camera_2d:
 		camera_2d.position_smoothing_enabled = false
@@ -104,6 +119,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	prev_vy = velocity.y
+
+	if invincible:
+		invincible_timer -= delta
+		if invincible_timer <= 0.0:
+			invincible = false
 
 	if dash_cooldown_timer > 0.0:
 		dash_cooldown_timer -= delta
@@ -141,6 +161,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		jump_buffer_timer -= delta
 
+	if Input.is_action_just_pressed("attack1"):
+		try_attack()
+
 	if Input.is_action_just_pressed("dash"):
 		try_dash()
 
@@ -151,6 +174,9 @@ func _physics_process(delta: float) -> void:
 		apply_wall_slide(delta)
 		handle_jump_logic()
 		handle_movement(delta)
+
+	if state == PlayerState.ATTACK and attack_hitbox.monitoring:
+		_apply_attack_hits()
 
 	move_and_slide()
 
@@ -163,6 +189,66 @@ func _physics_process(delta: float) -> void:
 	update_camera(delta)
 
 	was_on_floor = is_on_floor()
+
+func take_damage(amount: int, from_x: float) -> void:
+	if invincible:
+		return
+
+	hp -= amount
+	print("Player HP:", hp)
+
+	if hp <= 0:
+		print("Player died")
+		queue_free()
+		return
+
+	invincible = true
+	invincible_timer = INVINCIBLE_TIME
+
+	var kb_dir: float = sign(global_position.x - from_x)
+	if kb_dir == 0.0:
+		kb_dir = 1.0
+
+	velocity.x = kb_dir * DAMAGE_KNOCKBACK_X
+
+	if is_on_floor():
+		velocity.y = minf(velocity.y, 0.0)
+	else:
+		velocity.y = minf(velocity.y, 0.0) + DAMAGE_KNOCKBACK_Y
+
+
+
+func try_attack() -> void:
+	if state == PlayerState.ATTACK and animation_locked:
+		return
+	if is_dashing:
+		cancel_dash()
+
+	if is_on_floor():
+		velocity.x = 0.0
+	else:
+		velocity.x *= 0.4
+
+	state = PlayerState.ATTACK
+	animation_locked = true
+	play_anim_restart(&"attack")
+	_start_attack_hitbox()
+
+func _start_attack_hitbox() -> void:
+	attack_hit_once.clear()
+	_set_attack_hitbox_active(true)
+	_apply_attack_hits()
+
+func _apply_attack_hits() -> void:
+	var bodies := attack_hitbox.get_overlapping_bodies()
+	for b in bodies:
+		if b == null:
+			continue
+		if attack_hit_once.has(b):
+			continue
+		if b.has_method("take_damage"):
+			b.call("take_damage", 1, global_position.x)
+			attack_hit_once[b] = true
 
 func on_landed(last_vy: float) -> void:
 	if last_dash_was_air:
@@ -296,6 +382,18 @@ func handle_movement(delta: float) -> void:
 	if stop_control_timer > 0.0:
 		return
 
+	if state == PlayerState.ATTACK and animation_locked:
+		if is_on_floor():
+			velocity.x = move_toward(velocity.x, 0.0, FRICTION * delta)
+		else:
+			var direction_air: float = Input.get_axis("left", "right")
+			var target_air: float = direction_air * SPEED * 0.35
+			velocity.x = move_toward(velocity.x, target_air, AIR_ACCELERATION * 0.35 * delta)
+			if direction_air != 0.0:
+				animated_sprite_2d.flip_h = direction_air < 0.0
+				attack_hitbox.position.x = absf(attack_hitbox.position.x) * (-1.0 if animated_sprite_2d.flip_h else 1.0)
+		return
+
 	var direction: float = Input.get_axis("left", "right")
 	var target_speed: float = direction * SPEED
 
@@ -303,6 +401,7 @@ func handle_movement(delta: float) -> void:
 		var accel: float = ACCELERATION if is_on_floor() else AIR_ACCELERATION
 		velocity.x = move_toward(velocity.x, target_speed, accel * delta)
 		animated_sprite_2d.flip_h = direction < 0.0
+		attack_hitbox.position.x = absf(attack_hitbox.position.x) * (-1.0 if animated_sprite_2d.flip_h else 1.0)
 	else:
 		if is_on_floor():
 			velocity.x = move_toward(velocity.x, 0.0, FRICTION * delta)
@@ -312,6 +411,10 @@ func try_dash() -> void:
 		return
 	if not is_on_floor() and not air_dash_available:
 		return
+	if state == PlayerState.ATTACK and animation_locked:
+		return
+
+	_set_attack_hitbox_active(false)
 
 	dash_direction = sign(Input.get_axis("left", "right"))
 	if dash_direction == 0:
@@ -380,10 +483,18 @@ func play_anim_restart(anim_name: StringName) -> void:
 	animated_sprite_2d.frame = 0
 	animated_sprite_2d.play(anim_name)
 
+func _force_no_loop(anim_name: StringName) -> void:
+	var sf: SpriteFrames = animated_sprite_2d.sprite_frames
+	if sf and sf.has_animation(anim_name):
+		sf.set_animation_loop(anim_name, false)
+
 func _on_animation_finished() -> void:
 	if state == PlayerState.DASH and (animated_sprite_2d.animation == &"ground_dash" or animated_sprite_2d.animation == &"air_dash"):
 		animation_locked = false
 	if state == PlayerState.DASHSTOP and animated_sprite_2d.animation == &"dash_stop":
+		animation_locked = false
+	if state == PlayerState.ATTACK and animated_sprite_2d.animation == &"attack":
+		_set_attack_hitbox_active(false)
 		animation_locked = false
 
 func get_wall_directions() -> int:
@@ -391,3 +502,8 @@ func get_wall_directions() -> int:
 	if c:
 		return 1 if c.get_normal().x > 0.0 else -1
 	return sign(velocity.x) if velocity.x != 0.0 else (-1 if animated_sprite_2d.flip_h else 1)
+
+func _set_attack_hitbox_active(active: bool) -> void:
+	attack_hitbox.monitoring = active
+	if not active:
+		attack_hit_once.clear()
