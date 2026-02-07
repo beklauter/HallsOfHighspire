@@ -32,18 +32,39 @@
 [ext_resource type="Texture2D" uid="uid://blo0oxpcvsavj" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_1.png" id="18_vo27k"]
 [ext_resource type="Texture2D" uid="uid://dgrdypyac3tg6" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_2.png" id="19_genst"]
 [ext_resource type="Texture2D" uid="uid://dxiuhhrjgmxn4" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_3.png" id="20_niom3"]
+[ext_resource type="Texture2D" uid="uid://bntpwwfopkmeg" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_1.png" id="21_0ncpa"]
+[ext_resource type="Texture2D" uid="uid://dalvxkvkl3k1k" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_1.png" id="21_a38bk"]
 [ext_resource type="Texture2D" uid="uid://b622b27ea4pv0" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Hurt-Effect/Warrior_hurt_1.png" id="21_rw8a5"]
 [ext_resource type="Texture2D" uid="uid://0agf7pia6bi0" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_4.png" id="21_ttakn"]
+[ext_resource type="Texture2D" uid="uid://4ypii4ahts6x" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_2.png" id="22_3chqh"]
 [ext_resource type="Texture2D" uid="uid://conurfd16lc6j" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Hurt-Effect/Warrior_hurt_2.png" id="22_iwuka"]
 [ext_resource type="Texture2D" uid="uid://bo6kiepny3f2w" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_5.png" id="22_rw8a5"]
+[ext_resource type="Texture2D" uid="uid://dydstae88gki3" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_2.png" id="22_upxxc"]
 [ext_resource type="Texture2D" uid="uid://bcdv7ivgbckj4" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Hurt-Effect/Warrior_hurt_3.png" id="23_hyqqp"]
 [ext_resource type="Texture2D" uid="uid://c5mtb02ju14n" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_6.png" id="23_iwuka"]
+[ext_resource type="Texture2D" uid="uid://d1a5v0xwore7f" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_3.png" id="23_ln3h3"]
+[ext_resource type="Texture2D" uid="uid://us7sshubxubb" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_3.png" id="23_pwfqx"]
 [ext_resource type="Texture2D" uid="uid://dvjoq4ih4ncxm" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Hurt-Effect/Warrior_hurt_4.png" id="24_ds1xl"]
 [ext_resource type="Texture2D" uid="uid://bdb1ptp13ppw2" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_7.png" id="24_hyqqp"]
+[ext_resource type="Texture2D" uid="uid://w2jrnplag86m" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_4.png" id="24_kssj8"]
+[ext_resource type="Texture2D" uid="uid://dlbat8q8pnit4" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_4.png" id="24_uygh0"]
+[ext_resource type="Texture2D" uid="uid://dfluhh55dpprd" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_5.png" id="25_8lfxt"]
 [ext_resource type="Texture2D" uid="uid://dn402c8t6kcme" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Run/Warrior_Run_8.png" id="25_ds1xl"]
+[ext_resource type="Texture2D" uid="uid://b2ckgk5firay2" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_5.png" id="25_t1aof"]
 [ext_resource type="Texture2D" uid="uid://jaoi0iikxnak" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/WallSlide/Warrior_WallSlide_1.png" id="26_28m0y"]
+[ext_resource type="Texture2D" uid="uid://dsgjbws7k8bol" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_6.png" id="26_lclul"]
+[ext_resource type="Texture2D" uid="uid://brilrvfttqjra" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_6.png" id="26_w8qe1"]
+[ext_resource type="Texture2D" uid="uid://b1kgch61b50pm" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_7.png" id="27_ej2d6"]
+[ext_resource type="Texture2D" uid="uid://de7202rfwlqq4" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_7.png" id="27_hdvrm"]
 [ext_resource type="Texture2D" uid="uid://d0cap6gpfmv7e" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/WallSlide/Warrior_WallSlide_2.png" id="27_uniwh"]
+[ext_resource type="Texture2D" uid="uid://bxsex2drq43k8" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_8.png" id="28_5xbmr"]
+[ext_resource type="Texture2D" uid="uid://1fe34yx4ssic" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_8.png" id="28_fvjb1"]
 [ext_resource type="Texture2D" uid="uid://clhixyj7j56nw" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/WallSlide/Warrior_WallSlide_3.png" id="28_iqsei"]
+[ext_resource type="Texture2D" uid="uid://3e1whpvf0y4n" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_9.png" id="29_bysbl"]
+[ext_resource type="Texture2D" uid="uid://bg21x5okf5hep" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_9.png" id="29_hir57"]
+[ext_resource type="Texture2D" uid="uid://dlgw0bv5ecl83" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_10.png" id="30_2wy34"]
+[ext_resource type="Texture2D" uid="uid://8awgj8hspkgd" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Dash Attack/Warrior_Dash-Attack_10.png" id="30_7072n"]
+[ext_resource type="Texture2D" uid="uid://ct2shxghy1qks" path="res://assets/art/player/Warrior-V1.3/Warrior/Individual Sprite/Death-Effect/Warrior_Death_11.png" id="31_ymths"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dovo2"]
 
@@ -123,10 +144,54 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("21_a38bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3chqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_pwfqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kssj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8lfxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_lclul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ej2d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_fvjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bysbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2wy34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ymths")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_007i1")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_6cv16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j4nxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_28m0y")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_uniwh")
@@ -139,7 +204,42 @@ animations = [{
 }],
 "loop": false,
 "name": &"ground_dash",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_0ncpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_upxxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ln3h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_uygh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_t1aof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_w8qe1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hdvrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5xbmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hir57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7072n")
+}],
+"loop": true,
+"name": &"heavy_attack",
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -253,9 +353,8 @@ shape = SubResource("CapsuleShape2D_dovo2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1768319248]
 position = Vector2(5, -21)
 sprite_frames = SubResource("SpriteFrames_gx1jg")
-animation = &"hurt"
-frame = 3
-frame_progress = 1.0
+animation = &"dead"
+frame_progress = 0.30405754
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1629730569]
 zoom = Vector2(2, 2)
