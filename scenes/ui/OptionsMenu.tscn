@@ -11,6 +11,9 @@
 [ext_resource type="StyleBox" uid="uid://mqedh1fdytmh" path="res://prefabs/buttons/disabled.tres" id="9_22j3j"]
 [ext_resource type="StyleBox" uid="uid://dhbfox1imdode" path="res://prefabs/buttons/focus.tres" id="10_dsr17"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ult2b"]
+bg_color = Color(0.021434637, 0.021434635, 0.021434633, 0.38039216)
+
 [node name="OptionsMenu" type="Control" unique_id=1136459138]
 layout_mode = 3
 anchors_preset = 15
@@ -114,6 +117,17 @@ grow_vertical = 2
 theme_override_constants/separation = 10
 alignment = 2
 
+[node name="Button_Save" type="Button" parent="VBoxContainer" unique_id=394702976]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5l3pv")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("6_ult2b")
+theme_override_styles/pressed = ExtResource("7_2uo21")
+theme_override_styles/hover = ExtResource("8_mngy3")
+theme_override_styles/disabled = ExtResource("9_22j3j")
+theme_override_styles/focus = ExtResource("10_dsr17")
+text = "Save"
+
 [node name="Button_Back" type="Button" parent="VBoxContainer" unique_id=1054771068]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_5l3pv")
@@ -125,4 +139,101 @@ theme_override_styles/disabled = ExtResource("9_22j3j")
 theme_override_styles/focus = ExtResource("10_dsr17")
 text = "Back"
 
+[node name="Panel" type="Panel" parent="." unique_id=1751550915]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.5
+offset_top = -176.0
+offset_right = 520.5
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ult2b")
+
+[node name="Control" type="Control" parent="Panel" unique_id=156371756]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Control" unique_id=556792759]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.75
+offset_top = -97.5
+offset_right = 163.75
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicVolume" type="Label" parent="Panel/Control/VBoxContainer" unique_id=1365228295]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Panel/Control/VBoxContainer" unique_id=946592230]
+layout_mode = 2
+min_value = -40.0
+max_value = 0.0
+step = 0.5
+value = -10.0
+
+[node name="SFXVolume" type="Label" parent="Panel/Control/VBoxContainer" unique_id=643306855]
+layout_mode = 2
+text = "Sound Effects Volume"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="Panel/Control/VBoxContainer" unique_id=1781286633]
+layout_mode = 2
+min_value = -40.0
+max_value = 0.0
+step = 0.5
+value = -10.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/Control" unique_id=1600782317]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.75
+offset_top = -97.5
+offset_right = 163.75
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicVolume" type="Label" parent="Panel/Control/VBoxContainer2" unique_id=1152408410]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Panel/Control/VBoxContainer2" unique_id=706059426]
+layout_mode = 2
+min_value = -40.0
+max_value = 0.0
+step = 0.5
+value = -10.0
+
+[node name="SFXVolume" type="Label" parent="Panel/Control/VBoxContainer2" unique_id=415972291]
+layout_mode = 2
+text = "Sound Effects Volume"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="Panel/Control/VBoxContainer2" unique_id=766447004]
+layout_mode = 2
+min_value = -40.0
+max_value = 0.0
+step = 0.5
+value = -10.0
+
+[connection signal="pressed" from="VBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_Back" to="." method="_on_button_back_pressed"]
