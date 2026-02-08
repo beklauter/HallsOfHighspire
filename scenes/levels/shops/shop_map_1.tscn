@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bog1vjmfy4vd3" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="1_jnlcy"]
 [ext_resource type="Texture2D" uid="uid://cegy41vn4xlw5" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Floor Tiles2.png" id="2_0fvp4"]
+[ext_resource type="PackedScene" uid="uid://byeoljfg4qqe1" path="res://scenes/ui/GameUI.tscn" id="2_167uk"]
 [ext_resource type="PackedScene" uid="uid://t7k7ooxktl6w" path="res://scenes/player/player.tscn" id="2_rs6iw"]
 [ext_resource type="Texture2D" uid="uid://by6gb5dvanwpb" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Decor.png" id="3_2bj1o"]
 [ext_resource type="Texture2D" uid="uid://dallcqtjb2qmx" path="res://assets/art/player/GandalfHardcore FREE Platformer Assets/Birch1.png" id="3_k3oee"]
@@ -3921,10 +3922,8 @@ sources/24 = SubResource("TileSetAtlasSource_osqji")
 [node name="ShopMap1" type="Node2D" unique_id=2081267422]
 
 [node name="GameUI" parent="." unique_id=367376646 instance=ExtResource("34_d311t")]
-offset_left = 257.0
-offset_top = 349.0
-offset_right = 257.0
-offset_bottom = 349.0
+
+[node name="GameUI" parent="GameUI" unique_id=1995534564 instance=ExtResource("2_167uk")]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1171402658]
 tile_set = SubResource("TileSet_p7eid")

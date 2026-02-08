@@ -199,5 +199,41 @@ max_value = 0.0
 step = 0.5
 value = -10.0
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/Control" unique_id=1600782317]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.75
+offset_top = -97.5
+offset_right = 163.75
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicVolume" type="Label" parent="Panel/Control/VBoxContainer2" unique_id=1152408410]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Panel/Control/VBoxContainer2" unique_id=706059426]
+layout_mode = 2
+min_value = -40.0
+max_value = 0.0
+step = 0.5
+value = -10.0
+
+[node name="SFXVolume" type="Label" parent="Panel/Control/VBoxContainer2" unique_id=415972291]
+layout_mode = 2
+text = "Sound Effects Volume"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="Panel/Control/VBoxContainer2" unique_id=766447004]
+layout_mode = 2
+min_value = -40.0
+max_value = 0.0
+step = 0.5
+value = -10.0
+
 [connection signal="pressed" from="VBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_Back" to="." method="_on_button_back_pressed"]
