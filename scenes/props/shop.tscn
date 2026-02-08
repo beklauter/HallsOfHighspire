@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://c25511kwd45l5"]
+
+[ext_resource type="Texture2D" uid="uid://dhfryu7lnbuk4" path="res://assets/art/tilesets/oak_woods_v1.0/decorations/shop_anim.png" id="1_arxiw"]
+[ext_resource type="Script" uid="uid://71q7tv1mpffn" path="res://scripts/levels/props/shop.gd" id="1_eyjwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyjwb"]
+size = Vector2(118, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j11pq"]
+atlas = ExtResource("1_arxiw")
+region = Rect2(0, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guj2o"]
+atlas = ExtResource("1_arxiw")
+region = Rect2(118, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bai65"]
+atlas = ExtResource("1_arxiw")
+region = Rect2(236, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tghhq"]
+atlas = ExtResource("1_arxiw")
+region = Rect2(354, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dv4o"]
+atlas = ExtResource("1_arxiw")
+region = Rect2(472, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ufpe"]
+atlas = ExtResource("1_arxiw")
+region = Rect2(590, 0, 118, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3v2i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j11pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guj2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bai65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tghhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dv4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ufpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le732"]
+size = Vector2(19, 11)
+
+[node name="Shop" type="Area2D" unique_id=1451182179 node_paths=PackedStringArray("animated_sprite_2d", "shop_ui")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_eyjwb")
+animated_sprite_2d = NodePath("AnimatedSprite2D")
+shop_ui = NodePath("ShopUI")
+
+[node name="House" type="CollisionShape2D" parent="." unique_id=1792653248]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_eyjwb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=201001863]
+sprite_frames = SubResource("SpriteFrames_x3v2i")
+frame_progress = 0.6340602
+
+[node name="Smoker" type="CollisionShape2D" parent="." unique_id=1809776666]
+position = Vector2(-21.5, -28.5)
+shape = SubResource("RectangleShape2D_le732")
+disabled = true
+
+[node name="ShopUI" type="Control" parent="." unique_id=1986936074]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="ShopUI" unique_id=1962582267]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -99.0
+offset_right = 82.0
+offset_bottom = -76.0
+text = "YOOOOOOOOO"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
