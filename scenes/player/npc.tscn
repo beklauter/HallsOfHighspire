@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://d4cqy0lsxjvkw"]
+
+[ext_resource type="Texture2D" uid="uid://dmwykudubhemp" path="res://assets/art/tilesets/oak_woods_v1.0/character/char_blue.png" id="1_fppcf"]
+[ext_resource type="Script" uid="uid://d3h7npphv82jl" path="res://scripts/player/npc_interact.gd" id="2_dphfv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dphfv"]
+atlas = ExtResource("1_fppcf")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lugpi"]
+atlas = ExtResource("1_fppcf")
+region = Rect2(56, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22qrj"]
+atlas = ExtResource("1_fppcf")
+region = Rect2(112, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkj4w"]
+atlas = ExtResource("1_fppcf")
+region = Rect2(168, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qowr2"]
+atlas = ExtResource("1_fppcf")
+region = Rect2(224, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so086"]
+atlas = ExtResource("1_fppcf")
+region = Rect2(280, 0, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jn4gf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dphfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lugpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22qrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkj4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qowr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so086")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fppcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fppcf"]
+size = Vector2(62, 32)
+
+[node name="NPC" type="CharacterBody2D" unique_id=1500900140]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1691938975]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_jn4gf")
+frame_progress = 0.87265
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=217954612]
+shape = SubResource("CapsuleShape2D_fppcf")
+disabled = true
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=216926969 node_paths=PackedStringArray("ui")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_dphfv")
+ui = NodePath("Control")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=2092653274]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_fppcf")
+
+[node name="Control" type="Control" parent="InteractArea" unique_id=1469567078]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="InteractArea/Control" unique_id=2097152152]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -31.0
+offset_right = 107.0
+offset_bottom = -8.0
+text = "Meddl Loide"
+
+[connection signal="body_entered" from="InteractArea" to="InteractArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="InteractArea" method="_on_body_exited"]
