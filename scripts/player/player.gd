@@ -105,6 +105,7 @@ var state: PlayerState = PlayerState.IDLE
 var sprite_base_pos: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	add_to_group("player")
 	sprite_base_pos = animated_sprite_2d.position
 	play_anim(&"idle")
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)

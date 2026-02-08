@@ -111,7 +111,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_hyqqp")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("14_ds1xl")
 }, {
@@ -125,8 +130,8 @@ animations = [{
 "texture": ExtResource("17_jrbya")
 }],
 "loop": true,
-"name": &"attack",
-"speed": 10.0
+"name": &"attack2",
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -178,7 +183,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dead",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -239,7 +244,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"heavy_attack",
-"speed": 7.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -347,19 +352,21 @@ collision_layer = 2
 script = ExtResource("1_dovo2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1678521236]
+visible = false
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_dovo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1768319248]
 position = Vector2(5, -21)
 sprite_frames = SubResource("SpriteFrames_gx1jg")
-animation = &"dead"
-frame_progress = 0.30405754
+animation = &"heavy_attack"
+frame_progress = 0.8599917
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1629730569]
 zoom = Vector2(2, 2)
 
 [node name="AttackHitbox" type="Area2D" parent="." unique_id=350865650]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
