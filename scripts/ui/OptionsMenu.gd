@@ -38,7 +38,9 @@ func _on_button_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/MainMenu.tscn")
 
 func _on_button_save_pressed() -> void:
+	print("Save Button pressed")
 	var cfg = ConfigFile.new()
 	cfg.set_value("audio", "music", music_slider.value)
 	cfg.set_value("audio", "sfx", sfx_slider.value)
 	cfg.save("user://settings.cfg")
+	get_tree().change_scene_to_file("res://scenes/ui/MainMenu.tscn")

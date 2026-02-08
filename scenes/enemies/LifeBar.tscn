@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bj1avccibuoxr"]
+
+[ext_resource type="Script" uid="uid://bgngbxnsuu35b" path="res://scripts/enemies/LifeBar.gd" id="1_hn8qx"]
+[ext_resource type="FontFile" uid="uid://dh03u0fh4g82s" path="res://assets/fonts/njnaruto.ttf" id="2_ufy1e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hn8qx"]
+bg_color = Color(0.6, 0.6, 0.6, 0.19607843)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="Animation" id="Animation_hn8qx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ufy1e"]
+resource_name = "fade_out"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5882353), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2sh6"]
+_data = {
+&"RESET": SubResource("Animation_hn8qx"),
+&"fade_out": SubResource("Animation_ufy1e")
+}
+
+[node name="LifeBar" type="Control" unique_id=942195356]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -31.000004
+offset_right = -25.0
+offset_bottom = -31.000004
+scale = Vector2(0.475, 0.475)
+script = ExtResource("1_hn8qx")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=5877117]
+layout_mode = 0
+offset_right = 101.052635
+offset_bottom = 16.842113
+theme_override_styles/background = SubResource("StyleBoxFlat_hn8qx")
+show_percentage = false
+
+[node name="EnemyName" type="Label" parent="." unique_id=2011579956]
+layout_mode = 0
+offset_right = 101.052635
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_ufy1e")
+theme_override_font_sizes/font_size = 13
+text = "EnemyName"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1658959312]
+libraries/ = SubResource("AnimationLibrary_h2sh6")
