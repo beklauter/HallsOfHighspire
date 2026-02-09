@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dmwykudubhemp" path="res://assets/art/tilesets/oak_woods_v1.0/character/char_blue.png" id="1_fppcf"]
 [ext_resource type="Script" uid="uid://d3h7npphv82jl" path="res://scripts/player/npc_interact.gd" id="2_dphfv"]
+[ext_resource type="PackedScene" uid="uid://eifh38jaf454" path="res://scenes/ui/props/NPCTalk.tscn" id="3_lugpi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dphfv"]
 atlas = ExtResource("1_fppcf")
@@ -86,12 +87,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="InteractArea/Control" unique_id=2097152152]
+visible = false
 layout_mode = 0
 offset_left = 12.0
 offset_top = -31.0
 offset_right = 107.0
 offset_bottom = -8.0
 text = "Meddl Loide"
+
+[node name="NpcTalk" parent="InteractArea/Control" unique_id=187122982 instance=ExtResource("3_lugpi")]
+layout_mode = 1
 
 [connection signal="body_entered" from="InteractArea" to="InteractArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractArea" to="InteractArea" method="_on_body_exited"]

@@ -3,7 +3,7 @@ extends Area2D
 @export var animated_sprite_2d: AnimatedSprite2D
 var player_in_range = false
 var player_ref: Node = null
-@export var shop_ui: Control
+@onready var shop_ui: Control = $ShopMenu
 
 func _ready() -> void:
 	animated_sprite_2d.play("default")

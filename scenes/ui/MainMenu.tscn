@@ -198,6 +198,17 @@ theme_override_styles/disabled = ExtResource("9_ee60a")
 theme_override_styles/focus = ExtResource("10_qjd48")
 text = "Start"
 
+[node name="Button_Randomizer" type="Button" parent="VBoxContainer" unique_id=894666793]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xpiny")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("6_7vr37")
+theme_override_styles/pressed = ExtResource("7_kncl5")
+theme_override_styles/hover = ExtResource("8_clp4r")
+theme_override_styles/disabled = ExtResource("9_ee60a")
+theme_override_styles/focus = ExtResource("10_qjd48")
+text = "Randomizer"
+
 [node name="Button_Options" type="Button" parent="VBoxContainer" unique_id=2012398742]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_xpiny")
@@ -237,6 +248,7 @@ movie_quit_on_finish = true
 
 [connection signal="pressed" from="Button_Credits" to="." method="_on_button_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_Randomizer" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_Options" to="." method="_on_button_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_Controls" to="." method="_on_button_controls_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_Exit" to="." method="_on_button_exit_pressed"]

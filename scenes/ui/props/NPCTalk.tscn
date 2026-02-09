@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://eifh38jaf454"]
+
+[ext_resource type="Texture2D" uid="uid://bm0ahxetdqt7d" path="res://icon.svg" id="1_pg5v7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ih8ou"]
+bg_color = Color(0.23529412, 0.3882353, 0.6, 0.19607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wuko"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="NpcTalk" type="Control" unique_id=187122982]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="." unique_id=1378427127]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 150.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ih8ou")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1409221294]
+position = Vector2(80, 75)
+texture = ExtResource("1_pg5v7")
+
+[node name="Textbox" type="Label" parent="Background" unique_id=1465070546]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 20.0
+offset_right = 1563.0
+offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wuko")
+text = "Text"

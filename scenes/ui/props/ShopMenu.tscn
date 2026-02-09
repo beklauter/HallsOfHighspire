@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bm7ue0g68u6s5"]
+
+[ext_resource type="FontFile" uid="uid://dh03u0fh4g82s" path="res://assets/fonts/njnaruto.ttf" id="1_wq1wd"]
+
+[node name="ShopMenu" type="Control" unique_id=1295040452]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1889014532]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 431.0
+offset_top = 98.0
+offset_right = -431.0
+offset_bottom = -310.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopTopText" type="Label" parent="Panel" unique_id=1442461695]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_top = 47.0
+offset_right = 40.5
+offset_bottom = 82.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_wq1wd")
+theme_override_font_sizes/font_size = 30
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
