@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://xm48e77rlduw"]
+
+[ext_resource type="Texture2D" uid="uid://cr04dkj7c4tgg" path="res://assets/art/tilesets/Nature Landscapes Free Pixel Art/nature_1/1.png" id="1_e61dq"]
+[ext_resource type="Texture2D" uid="uid://dnh0a32xv8kk7" path="res://assets/art/tilesets/Nature Landscapes Free Pixel Art/nature_1/2.png" id="2_812g3"]
+[ext_resource type="Texture2D" uid="uid://md7q3o4c6ks5" path="res://assets/art/tilesets/Nature Landscapes Free Pixel Art/nature_1/3.png" id="3_fduh1"]
+[ext_resource type="Texture2D" uid="uid://c32qljxnki1ff" path="res://assets/art/tilesets/Nature Landscapes Free Pixel Art/nature_1/5.png" id="4_u3yjb"]
+[ext_resource type="Texture2D" uid="uid://bx0idqsoxrcq8" path="res://assets/art/tilesets/Nature Landscapes Free Pixel Art/nature_1/6.png" id="5_y4v2m"]
+[ext_resource type="Texture2D" uid="uid://cokf6ojsxlojw" path="res://assets/art/tilesets/Nature Landscapes Free Pixel Art/nature_1/7.png" id="6_o1d4l"]
+[ext_resource type="Texture2D" uid="uid://c32g2gjw7kota" path="res://assets/art/tilesets/Nature Landscapes Free Pixel Art/nature_1/8.png" id="7_kf1fs"]
+[ext_resource type="Texture2D" uid="uid://b3ctcj4ckja3x" path="res://assets/art/tilesets/Nature Landscapes Free Pixel Art/nature_1/10.png" id="8_xomt1"]
+
+[node name="sky2" type="Node2D" unique_id=1637783458]
+
+[node name="8" type="Sprite2D" parent="." unique_id=537047853]
+texture = ExtResource("1_e61dq")
+
+[node name="7" type="Sprite2D" parent="." unique_id=2146299142]
+texture = ExtResource("2_812g3")
+
+[node name="6" type="Sprite2D" parent="." unique_id=1528948335]
+texture = ExtResource("3_fduh1")
+
+[node name="5" type="Sprite2D" parent="." unique_id=1805760547]
+texture = ExtResource("4_u3yjb")
+
+[node name="4" type="Sprite2D" parent="." unique_id=215002021]
+texture = ExtResource("5_y4v2m")
+
+[node name="3" type="Sprite2D" parent="." unique_id=1564433268]
+texture = ExtResource("6_o1d4l")
+
+[node name="2" type="Sprite2D" parent="." unique_id=658190894]
+texture = ExtResource("7_kf1fs")
+
+[node name="1" type="Sprite2D" parent="." unique_id=1335198430]
+texture = ExtResource("8_xomt1")
